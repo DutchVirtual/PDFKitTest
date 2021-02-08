@@ -13,6 +13,8 @@
 		8955304D25D031EC00E3FA63 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8955304C25D031EC00E3FA63 /* Preview Assets.xcassets */; };
 		8955305825D031EC00E3FA63 /* PDFKitTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8955305725D031EC00E3FA63 /* PDFKitTestTests.swift */; };
 		8955306325D031EC00E3FA63 /* PDFKitTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8955306225D031EC00E3FA63 /* PDFKitTestUITests.swift */; };
+		8955307425D0327100E3FA63 /* PDFViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8955307325D0327100E3FA63 /* PDFViewWrapper.swift */; };
+		8955307A25D0354D00E3FA63 /* A Sample PDF.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8955307925D0354D00E3FA63 /* A Sample PDF.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +47,8 @@
 		8955305E25D031EC00E3FA63 /* PDFKitTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PDFKitTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8955306225D031EC00E3FA63 /* PDFKitTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFKitTestUITests.swift; sourceTree = "<group>"; };
 		8955306425D031EC00E3FA63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8955307325D0327100E3FA63 /* PDFViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PDFViewWrapper.swift; path = Views/PDFViewWrapper.swift; sourceTree = "<group>"; };
+		8955307925D0354D00E3FA63 /* A Sample PDF.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "A Sample PDF.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +104,8 @@
 				8955304925D031EC00E3FA63 /* Assets.xcassets */,
 				8955304E25D031EC00E3FA63 /* Info.plist */,
 				8955304B25D031EC00E3FA63 /* Preview Content */,
+				8955307325D0327100E3FA63 /* PDFViewWrapper.swift */,
+				8955307925D0354D00E3FA63 /* A Sample PDF.pdf */,
 			);
 			path = PDFKitTest;
 			sourceTree = "<group>";
@@ -235,6 +241,7 @@
 			files = (
 				8955304D25D031EC00E3FA63 /* Preview Assets.xcassets in Resources */,
 				8955304A25D031EC00E3FA63 /* Assets.xcassets in Resources */,
+				8955307A25D0354D00E3FA63 /* A Sample PDF.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -259,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8955307425D0327100E3FA63 /* PDFViewWrapper.swift in Sources */,
 				8955304825D031EB00E3FA63 /* ContentView.swift in Sources */,
 				8955304625D031EB00E3FA63 /* PDFKitTestApp.swift in Sources */,
 			);
