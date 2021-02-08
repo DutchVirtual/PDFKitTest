@@ -15,6 +15,7 @@
 		8955306325D031EC00E3FA63 /* PDFKitTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8955306225D031EC00E3FA63 /* PDFKitTestUITests.swift */; };
 		8955307425D0327100E3FA63 /* PDFViewWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8955307325D0327100E3FA63 /* PDFViewWrapper.swift */; };
 		8955307A25D0354D00E3FA63 /* A Sample PDF.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 8955307925D0354D00E3FA63 /* A Sample PDF.pdf */; };
+		8955309A25D16BE300E3FA63 /* PDFCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8955309925D16BE300E3FA63 /* PDFCreator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		8955306425D031EC00E3FA63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8955307325D0327100E3FA63 /* PDFViewWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PDFViewWrapper.swift; path = Views/PDFViewWrapper.swift; sourceTree = "<group>"; };
 		8955307925D0354D00E3FA63 /* A Sample PDF.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "A Sample PDF.pdf"; sourceTree = "<group>"; };
+		8955309925D16BE300E3FA63 /* PDFCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PDFCreator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		8955304425D031EB00E3FA63 /* PDFKitTest */ = {
 			isa = PBXGroup;
 			children = (
+				8955309F25D16BF700E3FA63 /* PDFCreator */,
 				8955304525D031EB00E3FA63 /* PDFKitTestApp.swift */,
 				8955304725D031EB00E3FA63 /* ContentView.swift */,
 				8955304925D031EC00E3FA63 /* Assets.xcassets */,
@@ -134,6 +137,14 @@
 				8955306425D031EC00E3FA63 /* Info.plist */,
 			);
 			path = PDFKitTestUITests;
+			sourceTree = "<group>";
+		};
+		8955309F25D16BF700E3FA63 /* PDFCreator */ = {
+			isa = PBXGroup;
+			children = (
+				8955309925D16BE300E3FA63 /* PDFCreator.swift */,
+			);
+			path = PDFCreator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,6 +278,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8955307425D0327100E3FA63 /* PDFViewWrapper.swift in Sources */,
+				8955309A25D16BE300E3FA63 /* PDFCreator.swift in Sources */,
 				8955304825D031EB00E3FA63 /* ContentView.swift in Sources */,
 				8955304625D031EB00E3FA63 /* PDFKitTestApp.swift in Sources */,
 			);
