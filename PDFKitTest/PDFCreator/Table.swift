@@ -19,20 +19,20 @@ extension PDFCreator {
         }
 
         func render(_ context: UIGraphicsPDFRendererContext, offset: inout CGPoint) {
-            context.beginPage()
-
             // Render table
             let columnWidth = PDFCreator.marginRect.width / CGFloat(self.columns)
             for row in self.content {
-                for i in 0 ..< self.columns {
-                    let newOffsetX = CGFloat(i) * columnWidth
-                    offset = CGPoint(x: offset.x + newOffsetX, y: offset.y)
+                for i in row.indices {
+                    let newOffsetX = PDFCreator.marginRect.origin.x + (CGFloat(i) * columnWidth)
+                    offset = CGPoint(x: newOffsetX, y: offset.y)
 
                     let text: String = row[i]
+                    NSLog("Column \(i+1) at offset \(offset) with content [\(text)]")
                     let attributes = [NSAttributedString.Key.font: PDFCreator.bodyFont]
                     text.draw(at: offset, withAttributes: attributes)
                 }
-                offset = CGPoint(x: PDFCreator.marginRect.origin.x, y: offset.y + PDFCreator.bodyFontSize + Self.spacing)
+                let newOffsetY = offset.y + PDFCreator.bodyFontSize + Self.spacing
+                offset = CGPoint(x: PDFCreator.marginRect.origin.x, y: newOffsetY)
             }
         }
 

@@ -21,17 +21,18 @@ struct PDFCreator {
     static let marginRect = pageRect.inset(by: marginInsets)
 
     private var content: [Table] = []
+    var filename = ""
 
     mutating func append(_ table: Table) {
         self.content.append(table)
     }
-
     
-    func render() -> Data {
+    var data: Data {
         let format = UIGraphicsPDFRendererFormat()
 
         let renderer = UIGraphicsPDFRenderer(bounds: Self.pageRect, format: format)
         let data = renderer.pdfData { context in
+            context.beginPage()
             var offset = Self.marginRect.origin
             
             for table in self.content {
@@ -40,18 +41,16 @@ struct PDFCreator {
         }
         return data
     }
-}
-
-extension PDFCreator {
-    static func makeTest() -> PDFCreator {
-        var pdfCreator = PDFCreator()
-        var table = PDFCreator.Table(columns: 2)
-        table.append(["Column 1", "Column 2"])
-        table.append(["Column 1", "Column 2"])
-        table.append(["Column 1", "Column 2"])
-        table.append(["Column 1", "Column 2"])
-        table.append(["Column 1", "Column 2"])
-        pdfCreator.append(table)
-        return pdfCreator
+    
+    var fileURL: URL? {
+        let localFilename = self.filename.isEmpty ? "attachment.pdf" : self.filename
+        let url = URL(fileURLWithPath: NSTemporaryDirectory().appending(localFilename))
+        do {
+            try self.data.write(to: url)
+            return url
+        } catch {
+            NSLog("Error writing temporary file for attachment: \(error.localizedDescription)")
+            return nil
+        }
     }
 }
