@@ -36,6 +36,6 @@ struct PDFViewer: UIViewRepresentable {
 
 struct PDFViewWrapper_Previews: PreviewProvider {
     static var previews: some View {
-        PDFViewer(pdfLayout: PDFLayout())
+        PDFViewer(pdfLayout: PDFLayout.makeTestInstance())
     }
 }
