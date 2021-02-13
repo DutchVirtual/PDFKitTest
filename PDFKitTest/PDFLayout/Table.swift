@@ -8,7 +8,7 @@
 import Foundation
 import PDFKit
 
-extension PDFCreator {
+extension PDFLayout {
     struct Table {
         static let spacing: CGFloat = 3
         var columns: Int
@@ -20,19 +20,19 @@ extension PDFCreator {
 
         func render(_ context: UIGraphicsPDFRendererContext, offset: inout CGPoint) {
             // Render table
-            let columnWidth = PDFCreator.marginRect.width / CGFloat(self.columns)
+            let columnWidth = PDFLayout.marginRect.width / CGFloat(self.columns)
             for row in self.content {
                 for i in row.indices {
-                    let newOffsetX = PDFCreator.marginRect.origin.x + (CGFloat(i) * columnWidth)
+                    let newOffsetX = PDFLayout.marginRect.origin.x + (CGFloat(i) * columnWidth)
                     offset = CGPoint(x: newOffsetX, y: offset.y)
 
                     let text: String = row[i]
                     NSLog("Column \(i+1) at offset \(offset) with content [\(text)]")
-                    let attributes = [NSAttributedString.Key.font: PDFCreator.bodyFont]
+                    let attributes = [NSAttributedString.Key.font: PDFLayout.bodyFont]
                     text.draw(at: offset, withAttributes: attributes)
                 }
-                let newOffsetY = offset.y + PDFCreator.bodyFontSize + Self.spacing
-                offset = CGPoint(x: PDFCreator.marginRect.origin.x, y: newOffsetY)
+                let newOffsetY = offset.y + PDFLayout.bodyFontSize + Self.spacing
+                offset = CGPoint(x: PDFLayout.marginRect.origin.x, y: newOffsetY)
             }
         }
 

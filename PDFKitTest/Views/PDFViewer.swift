@@ -9,12 +9,12 @@ import PDFKit
 import SwiftUI
 
 struct PDFViewer: UIViewRepresentable {
-    let pdfCreator: PDFCreator
+    let pdfLayout: PDFLayout
     
     func makeUIView(context: Context) -> PDFView {
         let view = PDFView()
         view.autoScales = true
-        let data = pdfCreator.render()
+        let data = pdfLayout.data
         view.document = PDFDocument(data: data)
         return view
     }
@@ -36,6 +36,6 @@ struct PDFViewer: UIViewRepresentable {
 
 struct PDFViewWrapper_Previews: PreviewProvider {
     static var previews: some View {
-        PDFViewer(pdfCreator: PDFCreator())
+        PDFViewer(pdfLayout: PDFLayout())
     }
 }

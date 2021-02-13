@@ -1,5 +1,5 @@
 //
-//  PDFCreator.swift
+//  PDFLayout.swift
 //  PDFKitTest
 //
 //  Created by Bart van Kuik on 08/02/2021.
@@ -8,7 +8,7 @@
 import Foundation
 import PDFKit
 
-struct PDFCreator {
+struct PDFLayout {
     static let bodyFontSize: CGFloat = 12
     static let bodyFont = UIFont(name: "Helvetica", size: 12) ?? UIFont.systemFont(ofSize: Self.bodyFontSize)
     static var headerFont: UIFont {
