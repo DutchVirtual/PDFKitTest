@@ -1,5 +1,5 @@
 //
-//  PDFViewWrapper.swift
+//  PDFViewer.swift
 //  PDFKitTest
 //
 //  Created by Bart van Kuik on 07/02/2021.
@@ -8,7 +8,7 @@
 import PDFKit
 import SwiftUI
 
-struct PDFViewWrapper: UIViewRepresentable {
+struct PDFViewer: UIViewRepresentable {
     let pdfCreator: PDFCreator
     
     func makeUIView(context: Context) -> PDFView {
@@ -26,9 +26,9 @@ struct PDFViewWrapper: UIViewRepresentable {
     }
 
     class Coordinator: NSObject {
-        var parent: PDFViewWrapper
+        var parent: PDFViewer
 
-        init(_ parent: PDFViewWrapper) {
+        init(_ parent: PDFViewer) {
             self.parent = parent
         }
     }
@@ -36,6 +36,6 @@ struct PDFViewWrapper: UIViewRepresentable {
 
 struct PDFViewWrapper_Previews: PreviewProvider {
     static var previews: some View {
-        PDFViewWrapper(pdfCreator: PDFCreator())
+        PDFViewer(pdfCreator: PDFCreator())
     }
 }

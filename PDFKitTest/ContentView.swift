@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        PDFViewWrapper(pdfCreator: PDFCreator.makeTest())
+        PDFViewer(pdfCreator: PDFCreator.makeTest())
     }
 }
 
