@@ -11,10 +11,11 @@ import PDFKit
 extension PDFLayout {
     struct Table {
         static let spacing: CGFloat = 3
-        var columns: Int
-        private(set) var content: [[String]]
+        var columns = 0
+        private(set) var content: [[String]] = []
 
         mutating func append(_ row: [String]) {
+            self.columns = max(self.columns, row.count)
             self.content.append(row)
         }
 
@@ -34,11 +35,6 @@ extension PDFLayout {
                 let newOffsetY = offset.y + PDFLayout.bodyFontSize + Self.spacing
                 offset = CGPoint(x: PDFLayout.marginRect.origin.x, y: newOffsetY)
             }
-        }
-
-        init(columns: Int) {
-            self.columns = columns
-            self.content = []
         }
     }
 }

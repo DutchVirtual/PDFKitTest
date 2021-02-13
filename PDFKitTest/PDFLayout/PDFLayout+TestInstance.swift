@@ -10,10 +10,10 @@ import Foundation
 extension PDFLayout {
     static func makeTestInstance() -> PDFLayout {
         var pdfLayout = PDFLayout()
-        var table = PDFLayout.Table(columns: 2)
+        var table = PDFLayout.Table()
         table.append(["Column 1", "Column 2"])
-        table.append(["Column 1", "Column 2"])
-        table.append(["Column 1", "Column 2"])
+        table.append(["Column 1"])
+        table.append(["Column 1", "Column 2", "Column 3"])
         table.append(["Column 1", "Column 2"])
         table.append(["Column 1", "Column 2"])
         pdfLayout.append(table)
