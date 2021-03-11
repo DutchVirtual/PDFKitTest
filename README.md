@@ -1,6 +1,7 @@
 # PDFKitTest
 
-Example app that generates a PDF and then previews it.
+Example app that generates a PDF and then previews it. Interface
+built with SwiftUI where possible.
 
 # A couple of points
 
